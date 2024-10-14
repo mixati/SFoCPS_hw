@@ -94,20 +94,22 @@ func encryptSymbol(num int, key Key) int {
 }
 
 func Encryption(word string, key Key) []int {
+	var encrypted []int
 	convertedText := convertText(word)
 	for i := 0; i < len(word); i++ {
-		convertedText[i] = encryptSymbol(convertedText[i], key)
+		encrypted = append(encrypted, encryptSymbol(convertedText[i], key))
 	}
-	return convertedText
+	return encrypted
 }
 
 func Decryption(word []int, key Key) string {
+	var decrypted []int
 	for i := 0; i < len(word); i++ {
-		word[i] = encryptSymbol(word[i], key)
+		decrypted = append(decrypted, encryptSymbol(word[i], key))
 	}
 	var text strings.Builder
-	for i := 0; i < len(word); i++ {
-		text.WriteRune(rune('a' + word[i]))
+	for i := 0; i < len(decrypted); i++ {
+		text.WriteRune(rune('a' + decrypted[i]))
 	}
 	return text.String()
 }
