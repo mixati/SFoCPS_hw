@@ -1,6 +1,6 @@
 package caesar
 
-func CaesarEncryption(word string, key int) string {
+func Encryption(word string, key int) string {
 	var ans string
 	for _, char := range word {
 		if char >= 'a' && char <= 'z' {
@@ -19,7 +19,7 @@ func CaesarEncryption(word string, key int) string {
 	return ans
 }
 
-func CaesarDecryption(word string, key int) string {
+func Decryption(word string, key int) string {
 	var ans string
 	for _, char := range word {
 		if char >= 'a' && char <= 'z' {
