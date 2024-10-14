@@ -1,6 +1,6 @@
 package vigenere
 
-func VigenereEncryption(word string, key string) string {
+func Encryption(word string, key string) string {
 	var ans string
 	keyLen := len(key)
 	for pos, char := range word {
@@ -15,7 +15,7 @@ func VigenereEncryption(word string, key string) string {
 	return ans
 }
 
-func VigenereDecrypter(word string, key string) string {
+func Decryption(word string, key string) string {
 	var ans string
 	keyLen := len(key)
 	for pos, char := range word {
